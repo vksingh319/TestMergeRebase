@@ -1,0 +1,112 @@
+$ git lg
+* f5321ed (HEAD, branch1) second commit branch 1
+| *   0ff72a4 (origin/solperf, solperf) Merge pull request #1 from vksingh319/branch1
+| |\
+| |/
+|/|
+* | 6bf28c8 (origin/branch1) branch1 first commit
+|/
+| * c4f62cc (origin/dbBranch1, dbBranch1) First commit dbBranch1
+|/
+* c6f431d (origin/master, master) Initialize Master
+
+AFter merger dbBranch1 into master then git pull master
+***************************************************
+$ git lg
+*   548b9bd (HEAD, origin/master, master) Merge pull request #2 from vksingh319/dbBranch1
+|\
+| * c4f62cc (origin/dbBranch1, dbBranch1) First commit dbBranch1
+|/
+| * f5321ed (branch1) second commit branch 1
+| | *   0ff72a4 (origin/solperf, solperf) Merge pull request #1 from vksingh319/branch1
+| | |\
+| |/ /
+|/| /
+| |/
+| * 6bf28c8 (origin/branch1) branch1 first commit
+|/
+* c6f431d Initialize Master
+
+***************************************************************
+vsingh@O-VSINGH /C/Workspace/TestMergerRebase/TestMergeRebase (solperf)
+$ git merge master
+Merge made by the 'recursive' strategy.
+ dbText.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dbText.txt
+
+vsingh@O-VSINGH /C/Workspace/TestMergerRebase/TestMergeRebase (solperf)
+$ git lg
+*   93542d8 (HEAD, solperf) Merge branch 'master' into solperf
+|\
+| *   548b9bd (origin/master, master) Merge pull request #2 from vksingh319/dbBranch1
+| |\
+| | * c4f62cc (origin/dbBranch1, dbBranch1) First commit dbBranch1
+| |/
+* |   0ff72a4 (origin/solperf) Merge pull request #1 from vksingh319/branch1
+|\ \
+| |/
+|/|
+| | * f5321ed (branch1) second commit branch 1
+| |/
+| * 6bf28c8 (origin/branch1) branch1 first commit
+|/
+* c6f431d Initialize Master
+
+********************************************
+vsingh@O-VSINGH /C/Workspace/TestMergerRebase/TestMergeRebase (branch1)
+$ git merge solperf
+Merge made by the 'recursive' strategy.
+ dbText.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dbText.txt
+
+ vsingh@O-VSINGH /C/Workspace/TestMergerRebase/TestMergeRebase (branch1)
+$ git lg
+*   325ee6c (HEAD, branch1) Merge branch 'solperf' into branch1
+|\
+| *   93542d8 (origin/solperf, solperf) Merge branch 'master' into solperf
+| |\
+| | *   548b9bd (origin/master, master) Merge pull request #2 from vksingh319/dbBranch1
+| | |\
+| | | * c4f62cc (origin/dbBranch1, dbBranch1) First commit dbBranch1
+| | |/
+| * |   0ff72a4 Merge pull request #1 from vksingh319/branch1
+| |\ \
+| | |/
+| |/|
+* | | f5321ed second commit branch 1
+| |/
+|/|
+* | 6bf28c8 (origin/branch1) branch1 first commit
+|/
+* c6f431d Initialize Master
+
+
+*********************************
+$ git lg
+*   48344e4 (HEAD, origin/solperf, solperf) Merge pull request #3 from vksingh319/branch1
+|\
+| *   325ee6c (origin/branch1, branch1) Merge branch 'solperf' into branch1
+| |\
+| |/
+|/|
+* |   93542d8 Merge branch 'master' into solperf
+|\ \
+| * \   548b9bd (origin/master, master) Merge pull request #2 from vksingh319/dbBranch1
+| |\ \
+| | * | c4f62cc (origin/dbBranch1, dbBranch1) First commit dbBranch1
+| |/ /
+* | |   0ff72a4 Merge pull request #1 from vksingh319/branch1
+|\ \ \
+| |/ /
+|/| |
+| | * f5321ed second commit branch 1
+| |/
+| * 6bf28c8 branch1 first commit
+|/
+* c6f431d Initialize Master
+
+
+********************************************
+Rebase
